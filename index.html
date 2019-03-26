@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		function student(name,age){
+			this.name=name;
+			this.age=age;
+			this.show=function(){
+				alert(this.name+"的年龄是"+this.age);
+			}
+		}
+		var num=new student("张三",'30');
+		num.show();
+		
+		var zhangsan=new Object();
+		zhangsan.name="张三";
+		zhangsan.age="30"; 
+		zhangsan.show=function(){
+			alert("姓名是"+this.name+"年龄是"+this.age);
+		}
+		zhangsan.show();
+	</script>
+</html>

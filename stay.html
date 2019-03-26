@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{				
+				width: 600px;
+				height: 600px;
+				margin: 0 auto;
+				background: url(img/clock.jpg) no-repeat;
+				position: relative;
+			}
+			#box div{
+				width: 600px;
+				height: 600px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.hous{
+				background: url(img/hour.png) no-repeat center center;
+			}
+			.fen{
+				background: url(img/minute.png) no-repeat center center;
+			}
+			.miao{
+				background: url(img/second.png) no-repeat center center;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				function $(id){
+					return document.getElementById(id);
+				}
+				function fn(){
+					var curr=new Date();
+					var ms=curr.getMilliseconds();
+					var miao=curr.getSeconds()+ms/1000;
+					var fen=curr.getMinutes()+miao/60;
+					var shi=curr.getHours()+fen/60;
+					
+					
+					$("m").style.transform="rotate("+miao*6+"deg)";
+					$("f").style.transform="rotate("+fen*6+"deg)";
+					$("h").style.transform="rotate("+shi*30+"deg)";					
+					
+					$("m").style._webkit_transfrom="rotate("+miao*6+"deg)";					
+					$("f").style._webkit_transfrom="rotate("+fen*6+"deg)";
+					$("h").style._webkit_transfrom="rotate("+shi*30+"deg)";
+					
+					
+					
+					$("m").style._o_transform="rotate("+miao*6+"deg)";					
+					$("f").style._o_transform="rotate("+fen*6+"deg)";
+					$("h").style._o_transform="rotate("+shi*30+"deg)";
+					
+					
+					
+					$("m").style._moz_transform="rotate("+miao*6+"deg)";					
+					$("f").style._moz_transform="rotate("+fen*6+"deg)";
+					$("h").style._moz_transform="rotate("+shi*30+"deg)";
+				}
+				setInterval(fn,100);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div class="hous" id="h"></div>
+			<div class="fen" id="f"></div>
+			<div class="miao" id="m"></div>
+		</div>
+	</body>
+</html>

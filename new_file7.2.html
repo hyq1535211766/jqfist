@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function show(){
+			console.log("学生简介");
+		}
+		var hou={
+			'姓名':"候煊强",
+			'年龄':"21",
+			'性别':"男",
+			'住址':"",
+			'电话':"5438",
+			show:function(){
+				console.log("学生简介");
+			}
+		}
+		show();
+		for (var na in hou) {
+			console.log(na+"="+hou[na]);
+		}
+	</script>
+</html>
